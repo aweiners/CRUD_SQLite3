@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>New Users</title>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-start justify-center p-8">
+
+  <div class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold mb-6 text-center">Admission Application Form</h1>
+    <h2 class="text-xl font-semibold mb-4">Personal Information</h2>
+
+    <form action="/users" method="POST" class="space-y-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div>
+            <label class="font-bold -mb-3">First Name</label>
+            <input type="text" name="first_name" placeholder="First Name" required class="border border-gray-300 rounded-md p-2">
+        </div>
+        
+        <div>
+            <label class="font-bold -mb-3">Last Name</label>
+            <input type="text" name="last_name" placeholder="Last Name" required class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div>
+            <label class="font-bold -mb-3">Middle Name</label>
+            <input type="text" name="middle_name" placeholder="N/A if not applicable" required class="border border-gray-300 rounded-md p-2">
+        </div>
+
+        
+        
+      </div>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+        <div>
+          <label class="block text-sm font-medium mb-1">Suffix</label>
+          <input type="text" name="suffix" placeholder="Suffix" class="border border-gray-300 rounded-md p-2 w-full">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Contact <span class="text-red-600">*</span></label>
+          <input type="text" name="contact" placeholder="Contact" required class="border border-gray-300 rounded-md p-2 w-full">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Gender <span class="text-red-600">*</span></label>
+          <select name="gender" required class="border border-gray-300 rounded-md p-2 w-full">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Birthdate <span class="text-red-600">*</span></label>
+          <input type="date" name="birthdate" required class="border border-gray-300 rounded-md p-2 w-full">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Nationality</label>
+                <input type="text" name="nationality" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium mb-1">Country</label>
+                <input type="text" name="country" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+
+            
+      </div>
+
+      <div>
+                <label class="block text-sm font-medium mb-1">Address</label>
+                <input type="text" name="address" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+
+      <div class="">
+        <div class="items-center justify-center">
+
+            <h1 class="text-center font-bold text-2xl items-center mb-5">Educational Background</h1>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+            <div>
+                <label class="block text-sm font-medium mb-1">School Name <span class="text-red-600">*</span></label>
+                <input type="text" name="school_name" placeholder="School Name" required class="border border-gray-300 rounded-md p-2 w-full">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Academic Strand<span class="text-red-600">*</span></label>
+                <select name="academic_strand" required placeholder="Select Academic Track" class="border border-gray-300 rounded-md h-10 p-1 w-full">
+                <option class="" value="">Select Academic Track</option>
+                <option value="Humss">HUMSS</option>
+                <option value="Abm">ABM</option>
+                <option value="Stem">STEM</option>
+                <option value="Gas">GAS</option>
+                <option value="Tvl">TVL</option>
+                <option value="Others">Others</option>
+              </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium mb-1">Academic Track <span class="text-red-600">*</span></label>
+                <input type="text" name="academic_track" placeholder="Academic Track" required class="border border-gray-300 rounded-md p-2 w-full">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Year Graduated <span class="text-red-600">*</span></label>
+                <input type="text" name="yr_graduated" placeholder="Year" required class="border border-gray-300 rounded-md p-2 w-full">
+              </div>
+      
+              
+
+        </div>
+        
+        
+        
+      </div>
+        <div class="text-center">
+            <h1 class="font-bold text-2xl mb-5">Course Preferences</h1>
+        </div>
+        <div class="grid grid-cols-3 gap-2 justify-between">
+            <div>
+                <label class="block text-sm font-medium mb-1">Program Choice 1 <span class="text-red-600">*</span></label>
+                <input type="text" name="program_choice_1" placeholder="Type to search program choice" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Program Choice 2 <span class="text-red-600">*</span></label>
+                <input type="text" name="program_choice_2" placeholder="Type to search program choice" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Program Choice 3 <span class="text-red-600">*</span></label>
+                <input type="text" name="program_choice_3" placeholder="Type to search program choice" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+            
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Exam Date <span class="text-red-600">*</span></label>
+                <input type="date" name="exam_date" placeholder="Type to search program choice" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Proof of Payment <span class="text-red-600">*</span></label>
+                <input type="file" name="payment" placeholder="Type to search program choice" required class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">School Year <span class="text-red-600">*</span></label>
+                <select name="school_year" class="border border-gray-300 rounded-md h-10 p-1 w-full">
+                    <option value="">Select School Year</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Semester <span class="text-red-600">*</span></label>
+                <select name="semester" class="border border-gray-300 rounded-md h-10 p-1 w-full">
+                    <option value="">Select Semester</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+
+      <h2 class="text-xl font-semibold mt-8 mb-4">Account Information</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" name="name" placeholder="Username" required class="border border-gray-300 rounded-md p-2">
+        <input type="email" name="email" placeholder="Email" required class="border border-gray-300 rounded-md p-2">
+      </div>
+
+      <div class="flex items-center justify-between mt-6">
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md">Create</button>
+        <a href="/users" class="text-blue-600 hover:underline">Back</a>
+      </div>
+
+    </form>
+
+    
+  </div>
+
+</body>
+</html>
+ 
