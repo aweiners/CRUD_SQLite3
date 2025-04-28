@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User List</title>
+</head>
+<body class="bg-blue-300 flex justify-center">
+
+    <div class="bg-white border border-gray-900 rounded-md p-4 w-[70%] mt-10 ">
+        <h1 class="flex flex-col items-center justify-center font-bold mb-5 mt-5 text-[3vw]">
+                All Users
+            </h1>
+            <div class="">
+
+                
+            <ul>
+                <% users.forEach(user => { %>
+                    <li class="border border-gray-300 rounded-md p-4 mb-5 flex justify-between">
+                
+                        <div class="flex grid-cols-5 gap-3 justify-center w-full">
+
+                            <p><strong>ID: </strong><%= user.id %> <strong>Full Name: </strong><%= user.first_name%> <%= user.last_name %></p>
+                
+                            
+                            <div class="ml-auto flex gap-3">
+                                <a class="border border-gray-500 p-1 bg-blue-300 rounded-md font-white hover:bg-blue-500" href="/users/<%= user.id %>/edit">Edit</a>
+                                <form action="/users/<%= user.id %>/delete" method="POST" style="display: inline">
+                                    <button class="border border-gray-500 p-1 bg-red-500 font-white rounded-md hover:bg-red-600" type="submit">Delete</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                
+                    </li>
+                <% }); %>
+                
+            </ul>
+                
+
+                <div class="grid grid-cols-2 gap-5">
+                    <a class="border border-gray-300 p-2 mb-4 text-center hover:bg-gray-300"href="/users/new">Add New User</a>
+
+                    <a class="border border-gray-300 p-2 mb-4 text-center hover:bg-gray-300" href="http://localhost:5173/">Show detailed forms</a>
+                </div>
+            </div>
+
+
+    </div>
+    
+    
+</body>
+</html>
